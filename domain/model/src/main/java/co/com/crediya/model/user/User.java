@@ -8,6 +8,9 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import co.com.crediya.model.direction.Direction;
+import co.com.crediya.model.role.Role;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,12 +18,14 @@ import java.util.UUID;
 @Builder(toBuilder = true)
 public class User {
     @Builder.Default private UUID id = UUID.randomUUID();
-    private String[] firstNames;
-    private String[] lastNames;
+    private String firstNames;
+    private String lastNames;
     private LocalDate birthDate;
-    private String direction;
+    private Direction direction;
     private String phone;
     private String email;
-    private String salary;
+    private Double baseSalary;
     private String password;
+    private Role role;
+    @Builder.Default private Boolean isActive = true;
 }
